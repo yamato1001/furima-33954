@@ -27,7 +27,7 @@
 | concept              | text         | null: false                    |
 | category_id          | integer      | null: false                    |
 | product_condition_id | integer      | null: false                    |
-| shipping_charges_id  | integer      | null: false                    |
+| shipping_charge_id   | integer      | null: false                    |
 | shipping_area_id     | integer      | null: false                    |
 | days_to_ship_id      | integer      | null: false                    |
 | price                | integer      | null: false                    |
@@ -37,7 +37,7 @@
 
 - belongs_to :user
 - has_many :comments
-- has_one :logs
+- has_one :log
 
 ## comments テーブル
 
@@ -57,16 +57,16 @@
 | Column                 | Type      | Options                        |
 | ---------------------- | --------- | ------------------------------ |
 | postal_code            | string    | null: false                    |
-| prefectures_id         | integer   | null: false                    |
+| prefecture_id          | integer   | null: false                    |
 | municipality           | string    | null: false                    |
 | address                | string    | null: false                    |
 | building_name          | string    |                                |
 | phone_number           | string    | null: false                    |
-| logs                   | reference | null: false, foreign_key: true |
+| log                   | reference | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :logs
+- belongs_to :log
 
 ## logs テーブル
 
@@ -79,4 +79,4 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :shippings
+- has_one :shipping
