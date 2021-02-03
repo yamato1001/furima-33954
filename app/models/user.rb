@@ -10,5 +10,5 @@ class User < ApplicationRecord
     validates :first_name, :last_name, format: {with: /\A[ぁ-んァ-ン一-龥]/ }
     validates :birthday
   end   
-      
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,100}+\z/i, message: 'Include both letters and numbers' } 
 end
